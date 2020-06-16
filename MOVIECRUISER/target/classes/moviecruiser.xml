@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <bean id="item1" class="com.cognizant.moviecruiser.model.Movie">
+ <property name="id" value="1"></property>
+ <property name="title" value="Avatar"></property>
+ <property name="boxOffice" value="990002"></property>
+ <property name="active" value="true"></property>
+ <property name="dateOfLaunch" value="15/03/2017"></property>
+ <property name="genre" value="Action"></property>
+ <property name="hasTeaser" value="true"></property>
+ </bean>
+ <bean id="item2" class="com.cognizant.moviecruiser.model.Movie">
+ <property name="id" value="2"></property>
+  <property name="title" value="Minions"></property>
+ <property name="boxOffice" value="120002"></property>
+ <property name="active" value="true"></property>
+ <property name="dateOfLaunch" value="15/03/2017"></property>
+ <property name="genre" value="Comedy"></property>
+ <property name="hasTeaser" value="true"></property>
+ </bean>
+ <bean id="item3" class="com.cognizant.moviecruiser.model.Movie">
+ <property name="id" value="3"></property>
+  <property name="title" value="Jungle Book"></property>
+ <property name="boxOffice" value="880000"></property>
+ <property name="active" value="false"></property>
+ <property name="dateOfLaunch" value="15/03/2017"></property>
+ <property name="genre" value="Adventure"></property>
+ <property name="hasTeaser" value="true"></property>
+ </bean>
+ <bean id="item4" class="com.cognizant.moviecruiser.model.Movie">
+ <property name="id" value="4"></property>
+  <property name="title" value="Dragon ball Z"></property>
+ <property name="boxOffice" value="990002"></property>
+ <property name="active" value="false"></property>
+ <property name="dateOfLaunch" value="15/03/2017"></property>
+ <property name="genre" value="Action"></property>
+ <property name="hasTeaser" value="false"></property>
+ </bean>
+ <bean id="item5" class="com.cognizant.moviecruiser.model.Movie">
+ <property name="id" value="5"></property>
+  <property name="title" value="Rio"></property>
+ <property name="boxOffice" value="859002"></property>
+ <property name="active" value="true"></property>
+ <property name="dateOfLaunch" value="15/03/2017"></property>
+ <property name="genre" value="Comedy"></property>
+ <property name="hasTeaser" value="true"></property>
+ </bean>
+ <bean id="fav1" class="com.cognizant.moviecruiser.model.Favorites">
+ <property name="movieList">
+ <list>
+ <ref bean="item1"/>
+ <ref bean="item2"/>
+ </list>
+ </property>
+ <property name="total" value="2"></property>
+ </bean>
+ <bean id="fav2" class="com.cognizant.moviecruiser.model.Favorites">
+ <property name="movieList">
+ <list>
+ <ref bean="item4"/>
+ <ref bean="item2"/>
+ </list>
+ </property>
+ <property name="total" value="2"></property>
+ </bean>
+ <bean id="favMap" class="java.util.HashMap">
+ <constructor-arg>
+ <map>
+ <entry key="1" value-ref="fav1"></entry>
+ <entry key="2" value-ref="fav2"></entry>
+ 
+ </map>
+ </constructor-arg>
+
+ </bean>
+ 
+ <bean id="movieList" class="java.util.ArrayList">
+ <constructor-arg>
+ <list>
+  <ref bean="item1"/>
+ <ref bean="item2"/>
+ <ref bean="item3"/>
+ <ref bean="item4"/>
+ <ref bean="item5"/>
+ </list>
+ </constructor-arg>
+ </bean>
+ </beans>
